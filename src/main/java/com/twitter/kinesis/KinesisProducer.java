@@ -100,7 +100,7 @@ public class KinesisProducer implements Runnable {
     while (!Thread.interrupted()) {
       try {
         String message = upstream.take();
-        sendMessage(message.getBytes(UTF-8));
+        sendMessage(message.getBytes("UTF-8"));
       } catch (InterruptedException e) {
         logger.warn("Thread Interrupted");
       } catch (UnsupportedEncodingException e) {
